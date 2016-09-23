@@ -1,31 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/boxBackground"
-    android:layout_width="175dp"
-    android:layout_height="175dp"
-    android:background="#000">
+    android:layout_width="70pt"
+    android:layout_height="fill_parent">
 
     <ImageView
         android:id="@+id/loadImage"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="40pt"
+        android:layout_height="40pt"
         android:layout_centerInParent="true"
         android:src="@mipmap/ic_launcher" />
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="20pt"
         android:layout_alignParentBottom="true"
-        android:background="#4DFFFFFF">
+        >
         <TextView
             android:id="@+id/filterName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:paddingBottom="9pt"
             android:layout_centerInParent="true"
             android:fontFamily="serif"
             android:text="Filter name"
-            android:textColor="#fff"
-            android:textSize="22dp" />
+            android:textSize="7pt" />
     </RelativeLayout>
 
 

@@ -17,10 +17,21 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".MainActivity"
-            android:theme="@style/Theme" />
+            android:name=".MainActivity" />
         <activity
             android:name=".LoginActivity"
+            android:theme="@style/Theme">
+        </activity>
+        <activity
+            android:name=".ImagePickActivity"
+            android:theme="@style/Theme" />
+        <activity
+            android:name=".SaveActivity"
+            android:theme="@style/Theme" />
+        <activity
+            android:name=".SignupActivity"
+            android:theme="@style/Theme" />
+        <activity android:name=".StartActivity"
             android:theme="@style/Theme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -28,10 +39,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".ImagePickActivity"
-            android:theme="@style/Theme" />
-        <activity android:name=".SaveActivity"></activity>
     </application>
 
 </manifest>
