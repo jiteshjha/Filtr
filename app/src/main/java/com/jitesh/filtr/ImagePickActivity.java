@@ -2,11 +2,13 @@ package com.jitesh.filtr;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.Typeface;
 import android.net.Uri;
 import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 public class ImagePickActivity extends AppCompatActivity {
@@ -18,6 +20,11 @@ public class ImagePickActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_image_pick);
+        Typeface font = Typeface.createFromAsset(getAssets(), "fonts/fontawesome-webfont.ttf");
+        Button button3 = (Button)findViewById(R.id.button3);
+        Button button2 = (Button)findViewById(R.id.button2);
+        button3.setTypeface(font);
+        button2.setTypeface(font);
     }
 
     public void fetchGallery(View view) {

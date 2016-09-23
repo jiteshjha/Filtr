@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Filtr</string>
+    <string name="icon_camera">&#xf030;</string>
+    <string name="icon_folder">&#xf07b;</string>
 </resources>

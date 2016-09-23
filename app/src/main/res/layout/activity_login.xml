@@ -7,14 +7,17 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@color/colorPrimary"
     tools:context="com.jitesh.filtr.LoginActivity">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Login"
+        android:text="Filtr"
+        android:fontFamily="cursive"
         android:textSize="50dp"
+        android:textColor="#ffebee"
         android:id="@+id/textView"
         android:layout_above="@+id/editText"
         android:layout_centerHorizontal="true"
@@ -26,6 +29,7 @@
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
         android:hint="Username"
+        android:textColorHint="#ffebee"
         android:ems="10"
         android:id="@+id/editText"
         android:layout_centerVertical="true"
@@ -35,6 +39,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="textPassword"
+        android:textColorHint="#ffebee"
         android:hint="Password"
         android:ems="10"
         android:id="@+id/editText2"
@@ -42,7 +47,7 @@
         android:layout_alignStart="@+id/editText" />
 
 
-    <Button
+    <Button style="@style/Widget.AppCompat.Button.Colored"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Login"
