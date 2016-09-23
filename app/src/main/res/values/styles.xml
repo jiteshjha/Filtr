@@ -8,7 +8,7 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
-    <style name="LoginTheme" parent="AppTheme">
+    <style name="Theme" parent="AppTheme">
         <item name="windowNoTitle">true</item>
     </style>
 
