@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/boxBackground"
+    android:layout_width="175dp"
+    android:layout_height="175dp"
+    android:background="#000">
+
+    <ImageView
+        android:id="@+id/loadImage"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        android:src="@mipmap/ic_launcher" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:background="#4DFFFFFF">
+        <TextView
+            android:id="@+id/filterName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:fontFamily="serif"
+            android:text="Filter name"
+            android:textColor="#fff"
+            android:textSize="22dp" />
+    </RelativeLayout>
+
+
+</RelativeLayout>
+
+
+<!--
+    For reference: to set opacity levels along with a color, append one of the codes given below ahead of the hex code of the color you want.
+     e.g: I have used white with 30% opacity.
+     hex of white: #ffffff
+     opacity: 4D
+     hence resultant #4dffffff used above
+    100% — FF
+    95% — F2
+    90% — E6
+    85% — D9
+    80% — CC
+    75% — BF
+    70% — B3
+    65% — A6
+    60% — 99
+    55% — 8C
+    50% — 80
+    45% — 73
+    40% — 66
+    35% — 59
+    30% — 4D
+    25% — 40
+    20% — 33
+    15% — 26
+    10% — 1A
+    5% — 0D
+    0% — 00
+    -->
