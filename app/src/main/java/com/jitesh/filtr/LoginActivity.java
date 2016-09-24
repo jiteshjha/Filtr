@@ -40,7 +40,5 @@ public class LoginActivity extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), "Authentication Failed!", Toast.LENGTH_SHORT).show();
             }
         }
-        Intent intent = new Intent(getApplicationContext(), ImagePickActivity.class);
-        startActivity(intent);
     }
 }

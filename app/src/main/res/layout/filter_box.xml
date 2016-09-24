@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/boxBackground"
-    android:layout_width="70pt"
+    android:layout_width="60pt"
     android:layout_height="fill_parent">
 
     <ImageView
         android:id="@+id/loadImage"
-        android:layout_width="40pt"
-        android:layout_height="40pt"
+        android:layout_width="50pt"
+        android:layout_height="50pt"
         android:layout_centerInParent="true"
         android:src="@mipmap/ic_launcher" />
 
@@ -20,7 +20,7 @@
             android:id="@+id/filterName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingBottom="9pt"
+            android:paddingBottom="0pt"
             android:layout_centerInParent="true"
             android:fontFamily="serif"
             android:text="Filter name"

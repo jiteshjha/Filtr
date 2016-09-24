@@ -1,5 +1,7 @@
 package com.jitesh.filtr;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
@@ -22,7 +24,7 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity {
 
     Uri saveUri;
-
+    String[] filterOptions = {"Sepia", "1970", "Flamingo", "B&W"};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,9 +38,9 @@ public class MainActivity extends AppCompatActivity {
 
         imageView.setImageURI(uri);
 
-        String[] someString = {"Filter 1", "Filter 2", "Filter 3", "Filter 4", "Filter 5", "Filter 6", "Filter 7"};
+
         ArrayList<Filter> listFilters = new ArrayList<>();
-        for (String x : someString) {
+        for (String x : filterOptions) {
             Filter filter = new Filter();
             filter.setFilterName(x);
             listFilters.add(filter);
@@ -63,13 +65,25 @@ public class MainActivity extends AppCompatActivity {
         return true;
     }
 
+    public void showAboutDialog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setMessage("Created by Jitesh Kumar Jha")
+                .setTitle("About");
+        builder.setPositiveButton("Okay", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int id) {
+
+            }
+        });
+
+        AlertDialog dialog = builder.create();
+        dialog.show();
+    }
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
-            case R.id.menu_settings:
-
-                return true;
             case R.id.menu_about:
+                showAboutDialog();
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
