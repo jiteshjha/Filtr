@@ -3,28 +3,20 @@ package com.jitesh.filtr;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.StaggeredGridLayoutManager;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.ArrayAdapter;
-import android.widget.ImageView;
-import android.widget.ListAdapter;
-import android.widget.ListView;
 
-import java.util.ArrayList;
+public class MainActivity extends AppCompatActivity implements FilterFragment.onRecyclerViewPress {
 
-public class MainActivity extends AppCompatActivity {
-
+    String imageLink;
     Uri saveUri;
-    String[] filterOptions = {"Sepia", "1970", "Flamingo", "B&W"};
+
+    // String[] filterOptions = {"Sepia", "1970", "Flamingo", "B&W"};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,13 +25,23 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = getIntent();
         Uri uri = Uri.parse(intent.getStringExtra("imageUri"));
         saveUri = uri;
-	    String imageLink = intent.getStringExtra("imageUri");
-        ImageView imageView = (ImageView)findViewById(R.id.imageView);
+        imageLink = intent.getStringExtra("imageUri");
+        android.app.FragmentManager fragmentManager = getFragmentManager();
+        android.app.FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 
-        imageView.setImageURI(uri);
+        FilterFragment filterFragment = new FilterFragment();
+        filterFragment.getArgs(imageLink, MainActivity.this);
+        ImageFragment imageFragment = new ImageFragment();
+        imageFragment.getURI(saveUri);
+        fragmentTransaction.add(R.id.filterFrag, filterFragment);
+        fragmentTransaction.add(R.id.imageFrag, imageFragment);
+        fragmentTransaction.commit();
+        //ImageView imageView = (ImageView)findViewById(R.id.imageView);
+
+        //imageView.setImageURI(uri);
 
 
-        ArrayList<Filter> listFilters = new ArrayList<>();
+    /*    ArrayList<Filter> listFilters = new ArrayList<>();
         for (String x : filterOptions) {
             Filter filter = new Filter();
             filter.setFilterName(x);
@@ -49,10 +51,10 @@ public class MainActivity extends AppCompatActivity {
         ImageAdapter imageAdapter = new ImageAdapter(MainActivity.this, listFilters, imageLink);
         recyclerView.setAdapter(imageAdapter);
         recyclerView.setLayoutManager(new StaggeredGridLayoutManager(1, StaggeredGridLayoutManager.HORIZONTAL));
+    */
     }
 
     public void saveAction(View v) {
-        ImageView imageView = (ImageView)findViewById(R.id.imageView);
         Intent intent = new Intent(getApplicationContext(), SaveActivity.class);
         intent.putExtra("imageUri", saveUri.toString());
         startActivity(intent);
@@ -88,5 +90,17 @@ public class MainActivity extends AppCompatActivity {
             default:
                 return super.onOptionsItemSelected(item);
         }
+    }
+
+
+    @Override
+    public void setUri(Uri uri) { //interface from FilterFragment, reloading the ImageFragment here
+        android.app.FragmentManager fragmentManager = getFragmentManager();
+        android.app.FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        ImageFragment imageFragment = new ImageFragment();
+        saveUri = uri;
+        imageFragment.getURI(saveUri);
+        fragmentTransaction.add(R.id.imageFrag, imageFragment);
+        fragmentTransaction.commit();
     }
 }

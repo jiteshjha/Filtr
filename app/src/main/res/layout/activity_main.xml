@@ -2,33 +2,32 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:weightSum="6"
-    android:id="@+id/listView"
-    android:orientation="vertical" >
+    android:orientation="vertical"
+    android:weightSum="6">
 
     <Button
+        android:id="@+id/nextBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/nextBtn"
-        android:layout_marginRight="10sp"
-        android:text="Next"
-        android:background="@android:color/transparent"
         android:layout_gravity="right"
-        android:onClick="saveAction"/>
+        android:layout_marginRight="10sp"
+        android:background="@android:color/transparent"
+        android:onClick="saveAction"
+        android:text="Next" />
 
-    <ImageView
+
+    <RelativeLayout
+        android:id="@+id/imageFrag"
         android:layout_width="fill_parent"
-        android:id="@+id/imageView"
         android:layout_height="0dip"
         android:layout_weight="4"
         android:adjustViewBounds="true"
-        android:scaleType="fitCenter"
-        />
+        android:scaleType="fitCenter" />
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/recyclerViewMain"
+    <RelativeLayout
+        android:id="@+id/filterFrag"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="2"></android.support.v7.widget.RecyclerView>
+        android:layout_weight="2" />
 
 </LinearLayout>
