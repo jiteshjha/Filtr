@@ -3,6 +3,7 @@ package com.jitesh.filtr;
 import android.annotation.TargetApi;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
@@ -11,13 +12,17 @@ import android.widget.ImageView;
 
 public class SaveActivity extends AppCompatActivity {
 
+    public static final String MY_PREFS_NAME = "MyPrefsFile";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_save);
 
         Intent intent = getIntent();
-        Uri uri = Uri.parse(intent.getStringExtra("imageUri"));
+        SharedPreferences editor = getSharedPreferences(MY_PREFS_NAME, MODE_PRIVATE);
+
+        Uri uri = Uri.parse(editor.getString("uri", intent.getStringExtra("imageUri")));
         ImageView imageView = (ImageView)findViewById(R.id.imageView2);
 
         imageView.setImageURI(uri);

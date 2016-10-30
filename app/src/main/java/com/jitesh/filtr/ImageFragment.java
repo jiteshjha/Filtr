@@ -24,6 +24,11 @@ public class ImageFragment extends Fragment {
         return view;
     }
 
+    public void setURI(Uri uri) {
+        imageView = (ImageView) view.findViewById(R.id.imageView);
+        imageView.setImageURI(uri);
+    }
+
 
 
     public void getURI(Uri uri){

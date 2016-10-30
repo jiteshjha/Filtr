@@ -96,6 +96,7 @@ public class MainActivity extends AppCompatActivity implements FilterFragment.on
 
     @Override
     public void setUri(Uri uri) { //interface from FilterFragment, reloading the ImageFragment here
+        Toast.makeText(this, "FUCK", Toast.LENGTH_SHORT).show();
         android.app.FragmentManager fragmentManager = getFragmentManager();
         android.app.FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         ImageFragment imageFragment = new ImageFragment();

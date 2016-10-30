@@ -57,7 +57,9 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     public void checkLogin(View view) {
-        EditText editText1 = (EditText)findViewById(R.id.editText);
+                        Intent intent = new Intent(getApplicationContext(), ImagePickActivity.class);
+                startActivity(intent);
+        /*EditText editText1 = (EditText)findViewById(R.id.editText);
         EditText editText2 = (EditText)findViewById(R.id.editText2);
 
         String username = editText1.getText().toString().trim();
@@ -79,30 +81,31 @@ public class LoginActivity extends AppCompatActivity {
 //            }
 
             // [START sign_in_with_email]
-            mAuth.signInWithEmailAndPassword(username, password)
-                    .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-                        @Override
-                        public void onComplete(@NonNull Task<AuthResult> task) {
-                            Log.d(TAG, "signInWithEmail:onComplete:" + task.isSuccessful());
-
-                            // If sign in fails, display a message to the user. If sign in succeeds
-                            // the auth state listener will be notified and logic to handle the
-                            // signed in user can be handled in the listener.
-                            if (!task.isSuccessful()) {
-                                Toast.makeText(getApplicationContext(), "Authentication Failed!", Toast.LENGTH_SHORT).show();
-                            }
-
-                            // [START_EXCLUDE]
-                            else {
-
-                                Log.w(TAG, "signInWithEmail:failed", task.getException());
-                                Toast.makeText(getApplicationContext(), "Successful Authentication!", Toast.LENGTH_SHORT).show();
-                                Intent intent = new Intent(getApplicationContext(), ImagePickActivity.class);
-                                startActivity(intent);
-                            }
-                        }
-                    });
+//            mAuth.signInWithEmailAndPassword(username, password)
+//                    .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+//                        @Override
+//                        public void onComplete(@NonNull Task<AuthResult> task) {
+//                            Log.d(TAG, "signInWithEmail:onComplete:" + task.isSuccessful());
+//
+//                            // If sign in fails, display a message to the user. If sign in succeeds
+//                            // the auth state listener will be notified and logic to handle the
+//                            // signed in user can be handled in the listener.
+//                            if (!task.isSuccessful()) {
+//                                Toast.makeText(getApplicationContext(), "Authentication Failed!", Toast.LENGTH_SHORT).show();
+//                            }
+//
+//                            // [START_EXCLUDE]
+//                            else {
+//
+//                                Log.w(TAG, "signInWithEmail:failed", task.getException());
+//                                Toast.makeText(getApplicationContext(), "Successful Authentication!", Toast.LENGTH_SHORT).show();
+//                                Intent intent = new Intent(getApplicationContext(), ImagePickActivity.class);
+//                                startActivity(intent);
+//                            }
+//                        }
+//                    });
 // [END sign_in_with_email]
-        }
+
+        }*/
     }
 }
