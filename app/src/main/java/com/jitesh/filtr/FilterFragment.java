@@ -8,9 +8,11 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -28,7 +30,7 @@ public class FilterFragment extends Fragment {
     Uri uri;
     onRecyclerViewPress onRecyclerViewPress;
     RecyclerView recyclerView;
-    String[] filterOptions = {"Sepia", "1970", "Flamingo", "B&W"};
+    String[] filterOptions = {"Sepia", "Sky Blue", "Lawn Green", "Violet" , "1970", "Flamingo", "B&W"};
 
     @Nullable
     @Override
@@ -41,12 +43,16 @@ public class FilterFragment extends Fragment {
             filter.setFilterName(x);
             listFilters.add(filter);
         }
+
+
         recyclerView = (RecyclerView) view.findViewById(R.id.recyclerViewMain);
         ImageAdapter imageAdapter = new ImageAdapter(context, listFilters, imageLink, new ImageAdapter.OnItemClickListener() {
             @Override public void onItemClick(View view, int position) {
+
                 if(position == 0){
 
                     uri = Uri.parse(imageLink); // parsing String into Uri, load the uri
+                    Toast.makeText(context, "FUCK!", Toast.LENGTH_SHORT).show();
                     // make changes on to the bitmap
                     onRecyclerViewPress.setUri(uri); // after changes are made, the uri is sent to the mainActivity from here, so that from there it can call the ImageFragment and reload it
                 }

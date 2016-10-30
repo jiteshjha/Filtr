@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "808876297928",
+    "firebase_url": "https://filtr-dfc62.firebaseio.com",
+    "project_id": "filtr-dfc62",
+    "storage_bucket": "filtr-dfc62.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:808876297928:android:234bc570a19a99a1",
+        "android_client_info": {
+          "package_name": "com.jitesh.filtr"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "808876297928-u8ddg6bm9llam71dvv0j3m5fga8oj64f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCcYTNrAeEETe75a0PLZQfGLM2vn9DzvTc"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
