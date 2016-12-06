@@ -1,4 +1,4 @@
 # Filtr
 Class Project
 
-[Work in Progress]
+Android App which uses various image filter to process your images.
